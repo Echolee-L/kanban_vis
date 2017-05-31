@@ -62,35 +62,6 @@
     overflow: auto;
 }
 
-.default-cursor {
-    cursor: default;
-}
-
-.pointer-cursor {
-    cursor: pointer;
-}
-
-
-.boardColumn.collapsed {
-    min-width: 0;
-    width: 1.9em;
-    padding: 0;
-    margin: 0;
-    background-color: #e0edf2;
-}
-
-.shrink {
-    float: right;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-.expand {
-    display: none;
-    cursor: pointer;
-    transform: translateY(-3px) translateX(-10px);
-}
-
 .boardItem {
     background: lightyellow;
     padding: 3px;
@@ -113,4 +84,16 @@
     margin: 3px;
     max-height: 12em;
     overflow: auto;
+}
+
+.toggle {
+	background-color: #E2EBBE;
+}
+
+span.fa {
+  margin-right: 5px;
+  color: rgba(51,51,51,.6);
+}
+.toggleItem {
+	display: block;
 }

@@ -39,12 +39,16 @@ module.controller('KbnKanbanVisController', function($scope, $element, Private) 
 	$scope.add = function(k) {
 		if (headers.indexOf(k) === -1) {
 			headers.push(k);
-			$scope.kanbanGen();
+			$scope.headers = headers;
 		}
 	}
 	$scope.remove = function(i, k) {
 		headers.splice(i, 1);
-		$scope.kanbanGen();
+		$scope.headers = headers;
+	}
+
+	$scope.toggleDetail = function () {
+		$scope.vis.params.allDetails = !$scope.vis.params.allDetails;
 	}
 
 	// Get data from ES

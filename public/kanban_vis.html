@@ -10,6 +10,10 @@
           				<div class="itemHeader" ng-show="headers.length > 0">
           					<span class="description" ng-click="remove(i,k)" ng-repeat="(i,k) in headers track by $index">{{k}} : {{item[k]}}</span>
           				</div>
+          				<div class="toggle">
+          			        <span class="fa fa-angle-double-down small toggleItem" ng-hide="vis.params.allDetails" ng-click="toggleDetail()"></span>
+          			        <span class="fa fa-angle-double-up small toggleItem" ng-show="vis.params.allDetails" ng-click="toggleDetail()"></span>
+          		        </div>
           				<div class="itemDetails" ng-show="vis.params.allDetails">
           					<span class="description" ng-click="add(key)" ng-repeat="(key, value) in item">{{key}} : {{value}}</span>
          	 			</div>
