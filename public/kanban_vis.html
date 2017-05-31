@@ -1,0 +1,21 @@
+<div ng-controller="KbnKanbanVisController" class="kanban-vis">
+	<div class="kanban-vis-container">
+		<div class="kanban-vis-content">
+    		<div class="boardColumn" ng-repeat="lane in data">
+     			<h3>{{ lane[0] }}
+     				<span>{{lane[1]}}</span>
+      			</h3>
+      			<div class="itemContainer">
+          			<div class="boardItem clearfix" ng-repeat="item in details" ng-if="item[selectedField] === lane[0]">
+          				<div class="itemHeader" ng-show="headers.length > 0">
+          					<span class="description" ng-click="remove(i,k)" ng-repeat="(i,k) in headers track by $index">{{k}} : {{item[k]}}</span>
+          				</div>
+          				<div class="itemDetails" ng-show="vis.params.allDetails">
+          					<span class="description" ng-click="add(key)" ng-repeat="(key, value) in item">{{key}} : {{value}}</span>
+         	 			</div>
+          			</div>
+      			</div>
+    		</div>
+		</div>
+	</div>
+</div>
