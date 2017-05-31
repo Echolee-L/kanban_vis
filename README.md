@@ -5,9 +5,8 @@ Introduction
 -------------
 This is a plugin for Kibana5+. Has been developed and tested on Kibana 5.1.2 and 5.2.2 version.
 
-![selected](images/selected key.PNG)
+![select](images/selected key.PNG)
 
-### Usage
 Installation:
 ```
 $ cd KIBANA_HOME/plugins
