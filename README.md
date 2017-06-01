@@ -5,11 +5,11 @@ Introduction
 -------------
 This is a plugin for Kibana5+. Has been developed and tested on Kibana 5.1.2 and 5.2.2 version.
 
-![selected](images/selected key.PNG)
+![selected](images/selectedKey.PNG)
 
 # Alert
-If your kibana version is not 5.2.2, please change to your kibana version in package.json.
-This plugin need to change searchSource.size() (there's a better way to do this, will improve in the future).
+* If your kibana version is not 5.2.2, please change to your kibana version in package.json.
+* This plugin need to change searchSource.size() (there's a better way to do this, will improve in the future).
 
 ### Usage
 Installation:
@@ -19,6 +19,8 @@ $ git clone https://github.com/Echolee-L/kanban_vis.git
 ```
 Here are some screenshots.
 
-![selected1](images/show all details.png)
-![selected2](images/show selected.PNG)
+![selected1](images/details.png)
+
+![selected2](images/selected.PNG)
+
 ![selected3](images/toggle.png)
