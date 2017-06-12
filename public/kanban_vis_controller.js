@@ -7,7 +7,8 @@ const module = uiModules.get('kibana/kanban_vis', ['kibana']);
 
 module.controller('KbnKanbanVisController', function($scope, $element, Private) {
 	const tabifyAggResponse = Private(AggResponseTabifyTabifyProvider);
-	let data, selectedField;
+	let data = [];
+	let selectedField;
 	let details = [];
 	let headers = [];
 	
@@ -21,11 +22,19 @@ module.controller('KbnKanbanVisController', function($scope, $element, Private) 
 		$scope.selectedField = selectedField;
 		$scope.details = details;
 		
+		if ($scope.vis.params.sortCol) {
+			let tmp = [];
+			let len = data.length;
+			Array.from(new Set($scope.vis.params.sortCol.split(','))).forEach(function (k, i) {
+				if (k && !isNaN(k) && ( k < len ) && ( k >= 0 )) {
+					tmp.push(data[k]);
+				}
+			});
+			$scope.data = tmp.length > 0 ? tmp : data;
+		}
+		
 		if ($scope.vis.params.header) {
-			let hTmp = [];
-			hTmp = $scope.vis.params.header.split(',');
-			
-			hTmp.forEach(function (k,i) {
+			$scope.vis.params.header.split(',').forEach(function (k, i) {
 				for (let t in details[0]) {
 					if (t === k) {
 						headers.indexOf(k) === -1 ? headers.push(k) : '';

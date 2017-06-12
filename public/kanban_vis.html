@@ -1,7 +1,7 @@
 <div ng-controller="KbnKanbanVisController" class="kanban-vis">
 	<div class="kanban-vis-container">
 		<div class="kanban-vis-content">
-    		<div class="boardColumn" ng-repeat="lane in data">
+    		<div class="boardColumn" ng-repeat="lane in data track by $index">
      			<h3>{{ lane[0] }}
      				<span>{{lane[1]}}</span>
       			</h3>
