@@ -21,14 +21,14 @@ module.controller('KbnKanbanVisController', function($scope, $element, Private) 
 		$scope.data = data;
 		$scope.selectedField = selectedField;
 		$scope.details = details;
+		$scope.toggleD = $scope.vis.params.allDetails;
 		
 		if ($scope.vis.params.sortCol) {
 			let tmp = [];
-			let len = data.length;
 			Array.from(new Set($scope.vis.params.sortCol.split(','))).forEach(function (k, i) {
-				if (k && !isNaN(k) && ( k < len ) && ( k >= 0 )) {
-					tmp.push(data[k]);
-				}
+				data.forEach(function (dk, j) {
+					k === dk[0] ? tmp.push(dk) : '';
+				});
 			});
 			$scope.data = tmp.length > 0 ? tmp : data;
 		}
@@ -57,7 +57,7 @@ module.controller('KbnKanbanVisController', function($scope, $element, Private) 
 	}
 
 	$scope.toggleDetail = function () {
-		$scope.vis.params.allDetails = !$scope.vis.params.allDetails;
+		$scope.toggleD = !$scope.toggleD;
 	}
 
 	// Get data from ES

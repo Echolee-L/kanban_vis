@@ -8,13 +8,13 @@
       			<div class="itemContainer">
           			<div class="boardItem clearfix" ng-repeat="item in details" ng-mouseenter="show = true" ng-mouseleave="show = false" ng-if="item[selectedField] === lane[0]">
           				<div class="itemHeader" ng-show="headers.length > 0">
-          					<span class="description" ng-click="remove(i,k)" ng-repeat="(i,k) in headers track by $index">{{k}} : {{item[k]}}</span>
+          					<span class="description" ng-repeat="(i,k) in headers track by $index"><i ng-click="remove(i,k)">{{k}}</i> : <a ng-if="k === 'number'" ng-href="https://gerrit.ericsson.se/{{item[k]}}" target="_blank">{{item[k]}}</a><i ng-hide="k === 'number'">{{item[k]}}</i></span>
           				</div>
           				<div class="toggle" ng-show="show">
-          			        <span class="fa fa-angle-double-down small toggleItem" ng-hide="vis.params.allDetails" ng-click="toggleDetail()"></span>
-          			        <span class="fa fa-angle-double-up small toggleItem" ng-show="vis.params.allDetails" ng-click="toggleDetail()"></span>
+          			        <span class="fa fa-angle-double-down small toggleItem" ng-hide="toggleD" ng-click="toggleDetail()"></span>
+          			        <span class="fa fa-angle-double-up small toggleItem" ng-show="toggleD" ng-click="toggleDetail()"></span>
           		        </div>
-          				<div class="itemDetails" ng-show="vis.params.allDetails">
+          				<div class="itemDetails" ng-show="toggleD && show">
           					<span class="description" ng-click="add(key)" ng-repeat="(key, value) in item">{{key}} : {{value}}</span>
          	 			</div>
           			</div>
