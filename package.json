@@ -1,5 +1,5 @@
 {
   "name": "kanban_vis",
   "description": "This is Kibana 5 plugin which uses to display data card",
-  "version": "5.2.2"
+  "version": "5.1.2"
 }
