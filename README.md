@@ -9,7 +9,7 @@ This is a plugin for Kibana5+. Has been developed and tested on Kibana 5.1.2 and
 
 ### Alert
 * If your kibana version is not 5.2.2, please change to your kibana version in package.json.
-* This plugin need to change searchSource.size() (there's a better way to do this, will improve in the future).
+* This plugin need to modify self.searchSource.size() to self.searchSource.size(300) in \_saved_vis.js (there's a better way to do this, will improve in the future).
 
 ### Usage
 Installation:
